@@ -9,22 +9,20 @@
 <body>
     <script language> 
 
+        /* 
+        Returns a randomly chossen option. 
+        */
         function computerPlay() {
             let option = ["rock", "paper", "scissor"];
             return option[Math.floor(Math.random() * option.length)];
         }
 
-        // testing functionality of computerPlay()
-    //    for (let i = 0; i <10; i++) {
-    //         let a = computerPlay();
-    //         console.log(a);
-    //    }
-
-
+        /* 
+        The logic behind the rock paper scissor game. 
+        Returns the outcome based of the player's selection and the computers.
+        */ 
     function demoGame(playerSelection,computerOpition){
             
-
-        
             if (playerSelection == "rock") {
                 if ( computerOpition == "scissor") { return "You Win! " + playerSelection + 
                 " beats " + computerOpition;}
@@ -56,14 +54,18 @@
                 }      
                  
             }
-            else{
+            else{ 
                 return "Player selected invalid option";
             }
 
         
     }
       
-
+        /* 
+        This function manages the series out of five by keeping track of players scores
+        It prints statements to the player to notify the outcome of each game. 
+        Calls demoGame function with the players and the computers choice to determine the outcome
+        */
         function game() {
 
             let playerScore=0; 
@@ -71,12 +73,14 @@
 
             while((playerScore + computerScore) <5) {
 
-                let choice = prompt("Select either rock, paper or scissor!");
+                let playerChoice = prompt("Select either rock, paper or scissor!");
                 
-                // search does not to what you thought !!!!
-                let outCome = demoGame(choice, computerPlay());
+                
+                let outCome = demoGame(playerChoice, computerPlay());
                 console.log(outCome);
+
                 if ((outCome.includes("Win"))) {playerScore++;}
+
                 else if ((outCome.includes("Lose"))) { computerScore++; }
 
                 console.log("Your Score: " + playerScore + " Computer Score: " + computerScore);
@@ -90,7 +94,7 @@
             }
         }
     
-        game();
+        game(); 
         
 
 
