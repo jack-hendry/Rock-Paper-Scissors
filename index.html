@@ -24,39 +24,39 @@
     function demoGame(playerSelection,computerOpition){
             
             if (playerSelection == "rock") {
+
                 if ( computerOpition == "scissor") { return "You Win! " + playerSelection + 
                 " beats " + computerOpition;}
+
                 else if (computerOpition == "paper") {return "You Lose! " +  computerOpition +
-                        " beats " + playerSelection;
-                }
-                else{
-                    return "You Tie! Both selected " + playerSelection;
-                }
+                        " beats " + playerSelection;}
+
+                else { return "You Tie! Both selected " + playerSelection;}
             
             }
             else if ( playerSelection == "scissor") {
+
                 if (computerOpition == "rock") {return "You Lose! " + computerOpition +
                         " beats " + playerSelection;}
+
                 else if (computerOpition == "paper")  {return "You Win! " + playerSelection +
                         " beats " + computerOpition}
-                else {
-                    return "You Tie! Both selected " + playerSelection;
-                }
+                
+                        else { return "You Tie! Both selected " + playerSelection;}
             }
 
             else if ( playerSelection == "paper"){
+
                 if (computerOpition == "rock") { return "You Win! " + playerSelection +
                         " beats " + computerOpition;}
+
                 else if (computerOpition == "scissor")  {return "You Lose! " + computerOpition +
                         " beats " + playerSelection;}
-                else {
-                    return "You Tie! Both selected " + playerSelection;
-                }      
+
+                else { return "You Tie! Both selected " + playerSelection; }      
                  
             }
-            else{ 
-                return "Player selected invalid option";
-            }
+            else { return "Player selected invalid option"; }
 
         
     }
@@ -74,8 +74,6 @@
             while((playerScore + computerScore) <5) {
 
                 let playerChoice = prompt("Select either rock, paper or scissor!");
-                
-                
                 let outCome = demoGame(playerChoice, computerPlay());
                 console.log(outCome);
 
@@ -86,12 +84,8 @@
                 console.log("Your Score: " + playerScore + " Computer Score: " + computerScore);
  
             }
-            if (playerScore > computerScore){
-                console.log("You won the sereis!"); 
-            }
-            else {
-                 console.log("Computer won the sereis!");
-            }
+            if (playerScore > computerScore){ console.log("You won the sereis!");  }
+            else { console.log("Computer won the sereis!"); }
         }
     
         game(); 
